@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить данные</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 20px;">
+        <h1>Добавить нового пользователя</h1>
+        <form method="POST" style="display: inline-block; text-align: left;">
+            <label for="f_name">Имя:</label>
+            <input type="text" id="f_name" name="f_name" required><br><br>
+
+            <label for="l_name">Фамилия:</label>
+            <input type="text" id="l_name" name="l_name" required><br><br>
+
+            <label for="birth_date">Дата рождения:</label>
+            <input type="date" id="birth_date" name="birth_date" required><br><br>
+
+            <label for="phone_number">Телефон:</label>
+            <input type="text" id="phone_number" name="phone_number" required><br><br>
+
+            <button type="submit">Добавить</button>
+        </form>
+        <br><br>
+        <a href="{{ url_for('index') }}"><button>Вернуться на главную</button></a>
+    </div>
+</body>
+</html>

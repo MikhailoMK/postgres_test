@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Показать данные</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 20px;">
+        <h1>Данные из базы</h1>
+        {% if people %}
+        <table style="margin: 20px auto; border-collapse: collapse; width: 80%; text-align: center; border: 1px solid #ddd;">
+            <thead>
+                <tr>
+                    <th style="padding: 10px; border: 1px solid #ddd;">ID</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Имя</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Фамилия</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Дата рождения</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Телефон</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in people %}
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ person[0] }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ person[1] }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ person[2] }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ person[3] }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ person[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>Данные не найдены.</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}"><button>Вернуться на главную</button></a>
+    </div>
+</body>
+</html>

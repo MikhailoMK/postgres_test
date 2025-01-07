@@ -1,0 +1,10 @@
+services:
+  postgres:
+    build: postgres
+    env_file:
+      - postgres/.env
+      
+  flask:
+    build: flask
+    ports:
+      - "5000:5000"
